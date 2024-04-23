@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire à choix multiples</title>
+</head>
+<body>
+    <h1>Q.C.M</h1>
+
+    <form id="quiz">
+        <h2>Question 1 : Quelle est l'organe qui ne peut jamais attrapper un cancer  ?</h2>
+        <input type="radio" name="question1" value="A" > A) le coeur<br>
+        <input type="radio" name="question1" value="B"> B) les poumons<br>
+        <input type="radio" name="question1" value="C"> C) les reins<br>
+
+        <h2>Question 2 : Où se trouve le Maroc?</h2>
+        <input type="radio" name="question2" value="A" > A) Amérique<br>
+        <input type="radio" name="question2" value="B"> B) Asie<br>
+        <input type="radio" name="question2" value="C"> C) Afrique<br>
+
+        <h2>Question 3 :De quoi se compose le Front-End?</h2>
+        <input type="radio" name="question3" value="A" > A) HTML-CSS-JS-PHP<br>
+        <input type="radio" name="question3" value="B"> B) HTML-CSS-JS<br>
+        <input type="radio" name="question3" value="C"> C) PHP-SQL-HTML<br>
+
+        <h2>Question 4 : Quelle est la devise du taiwan ?</h2>
+        <input type="radio" name="question4" value="A" > A) livre<br>
+        <input type="radio" name="question4" value="B"> B) dollar<br>
+        <input type="radio" name="question4" value="C"> C) roupie<br>
+
+        <input type="button" value="Valider" onclick="getResults()">
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+        function getResults() {
+            var quiz = document.getElementById('quiz');
+            var score = 0;
+            var question1 = quiz.question1.value;
+            var question2 = quiz.question2.value;
+            var question3 = quiz.question3.value;
+            var question4 = quiz.question4.value;
+
+            if (question1 == 'A') { score=score+25; }
+            if (question2 == 'C') { score=score+25; }
+            if (question3 == 'B') { score=score+25; }
+            if (question4 == 'C') { score=score+25; }
+
+            document.getElementById('results').innerHTML = 'Votre resultat est ' + score + ' /100.';
+        }
+    </script>
+</body>
+</html>

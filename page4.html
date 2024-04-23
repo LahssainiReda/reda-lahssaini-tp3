@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EXERCICE 4</title>
+    <meta charset="utf-8" />
+    <script>
+        function changeFond(color) {
+            document.bgColor = color;
+        }
+        function fin() {
+            alert("pas le droit d’aller là");
+            return false;
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>EXERCICE 4:Les événements</h1>
+    <button onMouseOver="changeFond('red')">changer couleur</button></br></br>
+    <a href="page1.html" onMouseOver="changeFond('red')" onmouseout="changeFond('white')" onclick="fin()">Sommaire</a></br></br>
+    
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>compte a rebours</h2>
+    <h4>votre temps restant est:</h4>
+    <p id="compteur"></p>
+
+    <script>
+        var dateFin = new Date("2024-5-22").getTime();
+
+        var x = setInterval(function() {
+            var maintenant = new Date().getTime();
+            var restant = dateFin - maintenant;
+            var jours = Math.floor(restant / (1000 * 60 * 60 * 24));
+            var heures = Math.floor((restant % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((restant % (1000 * 60 * 60)) / (1000 * 60));
+            var secondes = Math.floor((restant % (1000 * 60)) / 1000);
+        
+            document.getElementById("compteur").innerHTML =  jours + "j " + heures + "h "
+            + minutes + "m " + secondes + "s " ;
+
+            if (restant < 0) {
+                clearInterval(x);
+                document.getElementById("compteur").innerHTML = "votre date est passée";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+   

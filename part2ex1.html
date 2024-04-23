@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="image" src="téléchargement.jpeg" alt="Img1"><br>
+    <button id="stop">Arreter</button>
+    <button id="start">Reprendre</button>
+
+    <script>
+        var images = ['téléchargement.jpeg', 'rose.jpeg'];
+        var index = 0;
+        var intervalId;
+
+        function changeImage() {
+            index = (index + 1) % images.length;
+            document.getElementById('image').src = images[index];
+        }
+
+        function stopSlideshow() {
+            clearInterval(intervalId);
+        }
+
+        function startSlideshow() {
+            intervalId = setInterval(changeImage, 3000);
+        }
+
+        document.getElementById('stop').addEventListener('click', stopSlideshow);
+        document.getElementById('start').addEventListener('click', startSlideshow);
+
+        startSlideshow();
+    </script>
+</body>
+</html>

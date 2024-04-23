@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercice 5</title>
+    <meta charset="utf-8" />
+    <script>
+        function surligne(champ, erreur) {
+            if (erreur)
+                champ.style.backgroundColor = "red";
+            else
+                champ.style.backgroundColor = "white";
+        }
+        function verifPseudo() {
+            var nom = document.getElementById("nom");
+            if (nom.value.lenght > 2 && nom.value.lenght < 25)
+                surligne(nom, false);
+            else {
+                surligne(nom, true);
+                return true;
+            }
+        }
+
+        function verifMail() {
+            var test = /\S+@\S+\.\S+/;
+            var email = document.getElementById("email");
+            if (test.test(email.value))
+                surligne(email, false)
+            else {
+                surligne(email, true)
+                return true;
+            }
+        }
+        function verifPass() {
+            var pass1 = document.getElementById("pass1");
+            var pass2 = document.getElementById("pass2");
+            if (pass1.value == pass2.value)
+                surligne(pass2, false)
+            else {
+                surligne(pass2, true)
+                return true;
+            }
+        }
+
+        function verifForm() {
+            if (verifPseudo() || verifMail() || verifPass())
+                return false;
+            else
+                return true;
+        }
+        function veriTest() {
+            if (verifForm())
+                document.write("<h1> le formulaire est bien renseigne <h1>");
+            else
+                document.write("<h1> le formulaire est mal renseigne <h1>");
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Validation des champs d'un formulaire</h1>
+    <label> Nom utilisateur : </label></br>
+    <input type="text" id="nom" placeholder="Entrer votre nom" onblur="verifPseudo()"></br>
+    <label> Adresse email : </label></br>
+    <input type="email" id="email" placeholder="Entrer votre adresse email" onblur="verifMail()"></br>
+    <label> Mot de pass : </label></br>
+    <input type="password" id="pass1" placeholder="Entrer votre Mot de passe" onblur="verifPass()"></br>
+    <label> Confirmation de Mot de pass : </label></br>
+    <input type="password" id="pass2" placeholder="Confirmer votre Mot de passe" onblur="verifPass()"></br></br>
+    <button onclick="veriTest()">DONE</button>
+</body>
+
+</html>

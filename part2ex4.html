@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EXERCICE 8</title>
+    <meta charset="utf-8" />
+    <script>
+        function ajouter() {
+            var liste = document.getElementsByTagName("ul");
+            var texte = document.getElementById("course").value;
+            var nouveauli = document.createElement("li");
+            nouveauli.appendChild(document.createTextNode(texte));
+            liste[0].appendChild(nouveauli);
+        }
+        function supprimer() {
+            var liste = document.getElementsByTagName("ul");
+            var end = liste[0].lastElementChild;
+            liste[0].removeChild(end);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Modification du contenu dans un document </h1>
+
+    <input type="text" id="course">
+    <input type="button" value="validation" onclick="ajouter();">
+    <button onclick="supprimer();">supprimer</button>
+    <ul>
+        <li>reda</li>
+        <li>lahssaini</li>
+    </ul>
+</body>
+
+</html>

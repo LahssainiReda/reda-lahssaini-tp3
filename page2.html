@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        while (true) {
+            let expr = prompt("Veuillez entrer une expression arithmétique :");
+        
+            if (expr === null) {
+                break;
+            }
+        
+            try {
+                let resultat = eval(expr);
+                alert("Le résultat de l'expression " + expr + " est : " + resultat);
+            } catch (e) {
+                alert("Erreur : " + e.message);
+            }
+        }
+        </script>
+</body>
+</html>

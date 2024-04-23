@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+        var b = Math.floor(Math.random() * 11);
+        while (true) {
+            let a = prompt("choisir un nombre entre 0 et 10 :");
+            a = Number(a);
+             if (a === b) {
+                alert("Gagné !");
+                break;
+            } else if (a < b) {
+                alert("Trop petit !");
+            } else if (a > b) {
+                alert("Trop grand !");
+            } else {
+                alert("  nombre non valide.");
+            }
+        }
+        </script>
+        
+    
+</body>
+</html>
